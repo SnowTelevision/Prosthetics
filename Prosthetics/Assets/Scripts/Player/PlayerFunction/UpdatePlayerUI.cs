@@ -25,29 +25,6 @@ public class UpdatePlayerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Updates the stamina bar fill image for the left and right arm
-        playerCurrentMaxArmStamina = PlayerInfo.sPlayerInfo.leftArmController.armMaximumStamina;
-        UpdateArmStaminaFill(leftArmStaminaFill, PlayerInfo.sPlayerInfo.leftArmController);
-        UpdateArmStaminaFill(rightArmStaminaFill, PlayerInfo.sPlayerInfo.rightArmController);
-    }
 
-    /// <summary>
-    /// Updates the fill and color for player's arm's stamina bar
-    /// </summary>
-    /// <param name="fill"></param>
-    /// <param name="arm"></param>
-    public void UpdateArmStaminaFill(Image fill, ControlArm_UsingPhysics arm)
-    {
-        // Update the fill amount
-        fill.fillAmount = arm.armCurrentStamina / arm.armMaximumStamina;
-        // Update the fill color
-        if (arm.armCurrentStamina / arm.armMaximumStamina <= lowStaminaPercent)
-        {
-            fill.color = armLowStaminaColor;
-        }
-        else
-        {
-            fill.color = armNormalStaminaColor;
-        }
     }
 }

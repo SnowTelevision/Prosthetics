@@ -53,10 +53,10 @@ public class ArmUseItem : MonoBehaviour
     /// </summary>
     public void UpdateTriggerStatus()
     {
-        if (GetComponentInParent<ControlArm>().isLeftArm)
+        if (GetComponentInParent<ControlArm_UsingPhysics>().isLeftArm)
         {
             // If the left trigger is pressed down
-            if (Input.GetAxis("LeftTrigger") >= GetComponentInParent<ControlArm>().triggerThreshold)
+            if (Input.GetAxis("LeftTrigger") >= GetComponentInParent<ControlArm_UsingPhysics>().triggerThreshold)
             {
                 // If the player just pressed it down
                 if (hasTriggerReleased)
@@ -70,10 +70,10 @@ public class ArmUseItem : MonoBehaviour
             }
         }
 
-        if (!GetComponentInParent<ControlArm>().isLeftArm)
+        if (!GetComponentInParent<ControlArm_UsingPhysics>().isLeftArm)
         {
             // If the right armTip is not holding an item and the right trigger is pressed down
-            if (Input.GetAxis("RightTrigger") >= GetComponentInParent<ControlArm>().triggerThreshold)
+            if (Input.GetAxis("RightTrigger") >= GetComponentInParent<ControlArm_UsingPhysics>().triggerThreshold)
             {
                 // If the player just pressed it down
                 if (hasTriggerReleased)
@@ -97,10 +97,10 @@ public class ArmUseItem : MonoBehaviour
         if (currentlyHoldingItem != null &&
             currentlyHoldingItem.GetComponent<ItemInfo>().canUse)
         {
-            if (GetComponentInParent<ControlArm>().isLeftArm)
+            if (GetComponentInParent<ControlArm_UsingPhysics>().isLeftArm)
             {
                 // If the left trigger is pressed down
-                if (Input.GetAxis("LeftTrigger") >= GetComponentInParent<ControlArm>().triggerThreshold)
+                if (Input.GetAxis("LeftTrigger") >= GetComponentInParent<ControlArm_UsingPhysics>().triggerThreshold)
                 {
                     // If the player just pressed it down
                     if (hasTriggerReleased)
@@ -114,10 +114,10 @@ public class ArmUseItem : MonoBehaviour
                 }
             }
 
-            if (!GetComponentInParent<ControlArm>().isLeftArm)
+            if (!GetComponentInParent<ControlArm_UsingPhysics>().isLeftArm)
             {
                 // If the right armTip is not holding an item and the right trigger is pressed down
-                if (Input.GetAxis("RightTrigger") >= GetComponentInParent<ControlArm>().triggerThreshold)
+                if (Input.GetAxis("RightTrigger") >= GetComponentInParent<ControlArm_UsingPhysics>().triggerThreshold)
                 {
                     // If the player just pressed it down
                     if (hasTriggerReleased)

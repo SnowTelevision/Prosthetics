@@ -101,16 +101,7 @@ public class PlayerInfo : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isSideScroller) // If the game is in side-scrolling session
-        {
-            CorrectPlayerSideScrollingOrbit();
-        }
 
-        // If the player received vibration
-        if (isInEchoMode)
-        {
-            GamePad.SetVibration(playerIndex, totalHapticStrength, totalHapticStrength);
-        }
     }
 
     /// <summary>
@@ -165,22 +156,6 @@ public class PlayerInfo : MonoBehaviour
         }
 
         return targetPosition - new Vector3(transform.position.x, 0, transform.position.z);
-    }
-
-    /// <summary>
-    /// Make the player moves along the side-scrolling orbit
-    /// </summary>
-    public void CorrectPlayerSideScrollingOrbit()
-    {
-        if (test)
-        {
-            //Debug.DrawLine(transform.position, transform.position + GetComponent<Rigidbody>().velocity, Color.white);
-            //Debug.DrawLine(transform.position, transform.position + CalculateTangentVelocity(), Color.blue);
-            //Debug.DrawLine(transform.position, transform.position + CalculateTangentVelocity() - GetComponent<Rigidbody>().velocity, Color.red);
-        }
-
-        GetComponent<Rigidbody>().AddForce(CalculateTangentVelocity() - GetComponent<Rigidbody>().velocity, ForceMode.Acceleration);
-        GetComponent<Rigidbody>().AddForce(CalculateOrbitalAdjustmentForce(), ForceMode.VelocityChange);
     }
 
     ///// <summary>
